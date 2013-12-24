@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3AF205FE-78D9-4662-92F6-E88DE80BE24F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>sfml-test-server</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C6B15A7C-FB3B-4EA5-BD0A-2409C1582FAC</key>
+		<string>https://github.com/durakTEAM/tanks.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>sfml-test-server/sfml-test-server.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C6B15A7C-FB3B-4EA5-BD0A-2409C1582FAC</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/durakTEAM/tanks.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C6B15A7C-FB3B-4EA5-BD0A-2409C1582FAC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C6B15A7C-FB3B-4EA5-BD0A-2409C1582FAC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>tanksRep</string>
+		</dict>
+	</array>
+</dict>
+</plist>
