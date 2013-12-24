@@ -7,24 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		59CFDC891869E488008FCA49 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 59CFDC881869E488008FCA49 /* ResourcePath.mm */; };
 		59CFDC8C1869E488008FCA49 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59CFDC8B1869E488008FCA49 /* main.cpp */; };
-		59CFDC8F1869E488008FCA49 /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59CFDC8E1869E488008FCA49 /* cute_image.jpg */; };
-		59CFDC911869E488008FCA49 /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 59CFDC901869E488008FCA49 /* nice_music.ogg */; };
-		59CFDC931869E488008FCA49 /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59CFDC921869E488008FCA49 /* sansation.ttf */; };
-		59CFDC951869E488008FCA49 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 59CFDC941869E488008FCA49 /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		59CFDC831869E487008FCA49 /* sfml-test-server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sfml-test-server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59CFDC871869E488008FCA49 /* sfml-test-server-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "sfml-test-server-Info.plist"; sourceTree = "<group>"; };
-		59CFDC881869E488008FCA49 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
-		59CFDC8A1869E488008FCA49 /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		59CFDC8B1869E488008FCA49 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		59CFDC8E1869E488008FCA49 /* cute_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute_image.jpg; sourceTree = "<group>"; };
-		59CFDC901869E488008FCA49 /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
-		59CFDC921869E488008FCA49 /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
-		59CFDC941869E488008FCA49 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +46,6 @@
 		59CFDC851869E487008FCA49 /* sfml-test-server */ = {
 			isa = PBXGroup;
 			children = (
-				59CFDC881869E488008FCA49 /* ResourcePath.mm */,
-				59CFDC8A1869E488008FCA49 /* ResourcePath.hpp */,
 				59CFDC8B1869E488008FCA49 /* main.cpp */,
 				59CFDC8D1869E488008FCA49 /* Resources */,
 				59CFDC861869E488008FCA49 /* Supporting Files */,
@@ -77,10 +64,6 @@
 		59CFDC8D1869E488008FCA49 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				59CFDC8E1869E488008FCA49 /* cute_image.jpg */,
-				59CFDC901869E488008FCA49 /* nice_music.ogg */,
-				59CFDC921869E488008FCA49 /* sansation.ttf */,
-				59CFDC941869E488008FCA49 /* icon.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -137,10 +120,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59CFDC951869E488008FCA49 /* icon.png in Resources */,
-				59CFDC931869E488008FCA49 /* sansation.ttf in Resources */,
-				59CFDC911869E488008FCA49 /* nice_music.ogg in Resources */,
-				59CFDC8F1869E488008FCA49 /* cute_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +147,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				59CFDC8C1869E488008FCA49 /* main.cpp in Sources */,
-				59CFDC891869E488008FCA49 /* ResourcePath.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +292,7 @@
 				59CFDC9A1869E488008FCA49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
