@@ -39,8 +39,8 @@ const int direction_down = 4;
 const int bullet_speed = 15;
 const int tank_speed = 5;
 
-const int start_x=31; // ÍÓÓ‰ËÌ‡Ú˚ ÚÓ˜ÍË, ‚ ÍÓÚÓÓÈ ÔÓˇ‚ÎˇÂÚÒˇ ÒÓÁ‰‡ÌÌ˚È Ú‡ÌÍ
-const int start_y=31;
+int start_x=31; // убрал const тк в пакет нельзя пихать const
+int start_y=31;
 
 const int number_tiles_y=(screen_height/tile_y);
 
@@ -231,25 +231,82 @@ int main(){
     
     vector <Tank> players;
     vector <Dynamic_rect> flying_bullets;
-    
-    // Create a listener to wait for incoming connections on port 1488
+    int last_pl_nomber = 0;
+    // Create a listener to wait for incoming connections on port 3000
     sf::TcpListener listener;
-    listener.listen(1488);
-    // Wait for a connection
-    sf::TcpSocket socket;
     sf::Packet answer;
     sf::Packet question;
-    listener.accept(socket);
-    std::cout << "New client connected: " << socket.getRemoteAddress() << std::endl;
-    // Receive a message from the client
-    socket.receive(question);
-    int q;
-    question >> q;
-    if (q == -777) {
-        
+    while (true) {
+        listener.listen(3000);
+            // Wait for a connection
+        sf::TcpSocket socket;
+        listener.accept(socket);
+        std::cout << "New client connected: " << socket.getRemoteAddress() << std::endl;
+            // Receive a message from the client
+        socket.receive(question);
+        int q;
+        question >> q;
+        if (q == -777) {
+            Tank *tank=new Tank(start_x*(players.size()+1),start_y, tank_w, tank_h, tank_speed, direction_down, 1);
+            players.push_back(*tank);
+            cout<<"this is the first iteration"<<endl;
+            answer >> tank->life >> start_x >> start_y;
+            socket.send(answer);
+            answer.clear();
+            last_pl_nomber++;
+        }
+       /* else {
+            int me=datas[0]-'0';
+            players[me].x=(datas[1]-'0')*100+(datas[2]-'0')*10+datas[3]-'0';
+            players[me].y=(datas[4]-'0')*100+(datas[5]-'0')*10+datas[6]-'0';
+            bool create=datas[7]-'0';
+            players[me].direction=datas[8]-'0';
+            if (create==true){
+                Dynamic_rect* bull=new Dynamic_rect(players[me].x,players[me].y,bullet_w,bullet_h,bullet_speed,players[me].direction,1);
+                flying_bullets.push_back(*bull);};
+            
+            update(players, flying_bullets);*/
+            
+            //for (int i=1;i<maxln_answers;i++){answers[i]='!';};
+            if ( (players[me].life)==true){
+                answers[0]='1';
+                int count=1;// по массиву
+                answers[count++]=players[me].per_left+'0';
+                answers[count++]=players[me].per_right+'0';
+                answers[count++]=players[me].per_up+'0';
+                answers[count++]=players[me].per_down+'0';
+                answers[count++]=players.size()+'0';
+                cout<<players.size()<<endl;
+                answers[count++]=flying_bullets.size()+'0';
+                for (int i=0;i<players.size();i++)
+                {if(i!=me){
+                    
+                    answers[count++]=((players[i].x)/100)+'0';
+                    answers[count++]=((players[i].x)%100/10)+'0';
+                    answers[count++]=((players[i].x)%10)+'0';
+                    answers[count++]=((players[i].y)/100)+'0';
+                    answers[count++]=((players[i].y%100)/10)+'0';
+                    answers[count++]=(players[i].y%10)+'0';
+                    answers[count++]=(players[i].direction)+'0';
+                    
+                };};
+                
+                for (int i=0;i<flying_bullets.size();i++){
+                    
+                    answers[count++]=(flying_bullets[i].x/100)+'0';
+                    answers[count++]=(flying_bullets[i].x%100)/10+'0';
+                    answers[count++]=flying_bullets[i].x%10+'0';
+                    answers[count++]=flying_bullets[i].y/100+'0';
+                    answers[count++]=(flying_bullets[i].y%100)/10+'0';
+                    answers[count++]=flying_bullets[i].y%10+'0';
+                };
+            }
+            else {answers[0]='0';};
+            socket.send(answer);};
+        cout<<"  Были отправлены клиенту данные: ";
+        for (int i=0;i<maxln_answers;i++){cout<<answers[i];}
+        cout<<endl;
+        //closesocket (Sk)
+        }
     }
-    // Send an answer
-    std::string message = "Welcome, client";
-    socket.send(message.c_str(), message.size() + 1);
-
 }
